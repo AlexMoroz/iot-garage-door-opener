@@ -36,7 +36,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "start": "node app.js"
   },
   "dependencies": {
     "body-parser": "^1.0.2",
