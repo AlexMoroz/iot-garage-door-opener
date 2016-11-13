@@ -1,5 +1,5 @@
 /**
- * Created by Wojciech on 05-Oct-15.
+ * Created by Wojciech on 12-11-16.
  */
 
 import org.opencv.core.Mat;
