@@ -8,10 +8,16 @@
  * Controller of the doorOpenerApp
  */
 angular.module('doorOpenerApp')
-    .controller('MainCtrl', function ($scope, $http, $interval) {
+    .controller('MainCtrl', function ($scope, $http, $interval, $timeout) {
         function getStatus() {
             $http.get('/api/status').then(function (response) {
                 $scope.isSelected = response.data.open;
+                $scope.alarm = response.data.alarm;
+                if($scope.alarm) {
+                    $timeout(function () {
+                        $scope.alarm = false;
+                    }, 3000);
+                }
             });
         }
 

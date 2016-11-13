@@ -5,6 +5,9 @@
     <div class="panel-body">
         <div class="center-block">
             <input bs-switch ng-model="isSelected" ng-change="changeStatus(isSelected)" type="checkbox">
+
         </div>
+        <br/>
+        <div class="alert alert-danger text-center" role="alert" ng-show="alarm">Blacklist Alarm!</div>
     </div>
 </div>

@@ -47,6 +47,38 @@ app.post('/api/toggle', function(req, res){
     res.sendfile('data/data.json');
 });
 
+app.post('/api/open', function(req, res){
+    var file = fs.readFileSync('data/data.json');
+    var data = JSON.parse(file);
+    data.open = true;
+    fs.writeFileSync('data/data.json', JSON.stringify(data));
+    res.sendfile('data/data.json');
+});
+
+app.post('/api/close', function(req, res){
+    var file = fs.readFileSync('data/data.json');
+    var data = JSON.parse(file);
+    data.open = false;
+    fs.writeFileSync('data/data.json', JSON.stringify(data));
+    res.sendfile('data/data.json');
+});
+
+app.post('/api/onalarm', function(req, res){
+    var file = fs.readFileSync('data/data.json');
+    var data = JSON.parse(file);
+    data.alarm = true;
+    fs.writeFileSync('data/data.json', JSON.stringify(data));
+    res.sendfile('data/data.json');
+});
+
+app.post('/api/offalarm', function(req, res){
+    var file = fs.readFileSync('data/data.json');
+    var data = JSON.parse(file);
+    data.alarm = false;
+    fs.writeFileSync('data/data.json', JSON.stringify(data));
+    res.sendfile('data/data.json');
+});
+
 // redirect all others to the index (HTML5 history)
 app.get('*', function(req, res){
     res.sendfile('app/index.html');
